@@ -33,13 +33,13 @@ The replication can be used as a backup solution. The replica can be used to bac
 
 The three replicated servers are put in one group and this group is set to the single-primary mode. This concept is the same as the above single master- multiple slave mode. There is a single primary server in the group which plays the role of the master server. To be more specific, the primary server is set to read-write mode, while all the other servers in the group are set to read-only mode. SQLite also provides a multi-primary mode, which sets multiple servers to primary servers. This project uses the single-primary mode for group replication since this mode already meets our requirements.
 
-//insert single primary multi primary
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/primary.png?raw=true)
 
 ## Fault-tolerance:
 
 The group replication provides fault tolerance of the SQLite. If the existing primary leaves the group, whether voluntarily or unexpectedly, a new primary is elected automatically.
 
-//insert server s1
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/faultTolerance.png?raw=true)
 
 In the automatic primary member election process, each member looks at the new view of the group, orders the potential new primary members, and chooses the member that qualifies as the most suitable. Each member makes its own decision locally, following the primary election algorithm in its SQLite Server release. Different server versions may have a different result from the new primary. Because all members must reach the same decision, members adapt their primary election algorithm if other group members are running lower SQLite Server versions, so that they have the same behavior as the member with the lowest SQLite Server version in the group.
 
