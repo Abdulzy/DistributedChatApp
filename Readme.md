@@ -2,14 +2,14 @@
 
 ## Project Introduction
 
-The type of system we built is known as a distributed chat application which allows users to communicate with other users on the platform. Users can share text messages of varying lengths to individual users or to a group of users. The User interface of the application is built using the java SWING framework which allows us to create a user-friendly and robust interface quickly. The backend of the application is implemented using multiple frameworks to ide distributed features
+The type of system I built is known as a distributed chat application which allows users to communicate with other users on the platform. Users can share text messages of varying lengths to individual users or to a group of users. The User interface of the application is built using the java SWING framework which allows us to create a user-friendly and robust interface quickly. The backend of the application is implemented using multiple frameworks to ide distributed features
 like time/clock synchronization, distributed database management, group communication, peer-to-peer networks, etc. Users can access the application using an executable jar file that makes it easy to share with other users.
 
-As stated in the proposal, this project is like the “Design a P2P solution for mobile users who want to connect with their friends or avoid some people”. We also allow users to specify whom they want to communicate with by creating a channel that is not limited to a single user.
+As stated in the proposal, this project is like the “Design a P2P solution for mobile users who want to connect with their friends or avoid some people”. I also allow users to specify whom they want to communicate with by creating a channel that is not limited to a single user.
 
 # Key Algorithms/Architecture (Design)
 
-Below, we follow the points that we covered in the proposal and discuss how these are involved in our project.
+Below, Follow the points that I covered in the proposal and discuss how these are involved in our project.
 
 ## Time and Clocks:
 
@@ -19,7 +19,7 @@ server, the client web starts counting down with the server. After the client cl
 
 ## Distributed Mutual Exclusion:
 
-All sharing resources should be protected by Mutual Exclusion to prevent race conditions. At the database level, there are existing locking mechanisms to handle this problem. We use SQLite as a database engine, so every time we refresh the chat page to show the latest message, an exclusive row clock will keep the data from being changed by multiple connections at the same time. This is also true when inserting/updating rows in the database. Since we don’t have complex queries but only simple insert and update, we are good with the existing mutual exclusion provided by SQLite.
+All sharing resources should be protected by Mutual Exclusion to prevent race conditions. At the database level, there are existing locking mechanisms to handle this problem. I use SQLite as a database engine, so every time I refresh the chat page to show the latest message, an exclusive row clock will keep the data from being changed by multiple connections at the same time. This is also true when inserting/updating rows in the database. Since I don’t have complex queries but only simple insert and update, I am good with the existing mutual exclusion provided by SQLite.
 
 ## Replicated data management:
 
@@ -50,7 +50,7 @@ The reason to use group replication instead of the normal master-slave mode is t
 
 # Technical stack
 
-The technical stack that was mentioned in the proposal didn’t change. We used primarily Java to implement both the back end and front end. The backend is implemented with a database system, SQLite, which handles all the data for the project. For the front end, we implemented it with Java Swing, and it is a very straightforward user interface. Users are able to log in and then create or join a room, with a room just being the pathway to connect to other users. Also, with the options for users to leave the room and/or log out from the service.
+The technical stack that was mentioned in the proposal didn’t change. I used primarily Java to implement both the back end and front end. The backend is implemented with a database system, SQLite, which handles all the data for the project. For the front end, I implemented it with Java Swing, and it is a very straightforward user interface. Users are able to log in and then create or join a room, with a room just being the pathway to connect to other users. Also, with the options for users to leave the room and/or log out from the service.
 
 Library/dependencies:
 
@@ -63,7 +63,7 @@ Library/dependencies:
 - Java.util
 - Java.text
 
-In this project, for the communication between the client and the server, we thought of a lot of ways. Because it is a multi-client application, the technology was finally selected between RMI and Java sockets. Among them, RMI The flexibility is not high, both the client and the server must be written in Java, but it is more convenient to use. In contrast, java-sockets, although more flexible, need to specify the communication protocol between the server and the client. It is more troublesome, and after several trade-offs, RMI is finally chosen for server-client communication.
+In this project, for the communication between the client and the server, I thought of a lot of ways. Because it is a multi-client application, the technology was finally selected between RMI and Java sockets. Among them, RMI The flexibility is not high, both the client and the server must be written in Java, but it is more convenient to use. In contrast, java-sockets, although more flexible, need to specify the communication protocol between the server and the client. It is more troublesome, and after several trade-offs, RMI is finally chosen for server-client communication.
 
 # Module disassembly
 
@@ -146,8 +146,8 @@ no log out button(wasn't required) but could easily be implemented
 
 # Conclusions / Lessons Learned
 
-Before doing this project, we had little experience with Java socket, RMI, and SWING. We learned the basic syntax and structure of each and mixed and matched them to run normally. We are satisfied with what we achieved here. It is not easy to organize these technologies together; every technology deserves a deep dive into it.
+Before doing this project, I had little experience with Java socket, RMI, and SWING. I learned the basic syntax and structure of each and mixed and matched them to run normally. I am satisfied with what I achieved here. It is not easy to organize these technologies together; every technology deserves a deep dive into it.
 
-This app is a simplified version of a distributed chat system; we only consider simple scenarios, chatting with friends in a stable network without large files to transit. In the real world, a chat system might also have other features like support for big files, recall message notifications, etc. Each module can add additional complexity to the code. Though we pick up the relatively easy one, it acts as a great starting point for us to build a more complete and robust system in the future.
+This app is a simplified version of a distributed chat system; I only consider simple scenarios, chatting with friends in a stable network without large files to transit. In the real world, a chat system might also have other features like support for big files, recall message notifications, etc. Each module can add additional complexity to the code. Though I picked up the relatively easy one, it acts as a great starting point for us to build a more complete and robust system in the future.
 
 
