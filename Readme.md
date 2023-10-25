@@ -84,24 +84,65 @@ The client includes a thread for sending messages and a thread for receiving mes
 
 This app allows seamless chatting and file-sharing facilities while the end-to-end system is connected through the socket. Upon Receiving a file, the app provides the option to save it in the local drive. Also, users will be able to access the application using an executable jar file. Once started, the user can choose to communicate with an individual user or join a group "community" channel. Each entity, either individual user or group channel, is identified by the combination of IP address and port number. User starting communication will require to enter this combination, along with user credentials. Each user maintains his own local database which will be a copy of the application database. Every time the user receives/sends a message it will also log that message to its database. Whenever a user logs back into a chat, either individual or group they will be able to recreate the chat history using their local copy of chats. Each user will also maintain his own time clock that will be used to order simultaneous events.
 
-In our project, chat applications are based on a P2P client server. Two clients are connected through their IP address that matches the server. Initially, the home screen looks like this:
+## Following demo would portray multiple users communicating
 
-// initial login
+### Initial:
 
-After providing a Username, and IP Address to listen and send messages to the app which will be forwarded to the chatting window. This is what it looks like when a user(John) initially logs into the app:
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/initial.png?raw=true)
 
-// chat screen
+### 1 User(Abdul) logs in:
 
-This is what it looks like when 2 users are logged in at the same time. John’s view on the left, Abdul’s view on the right app:
-// 2 users login
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/1Login.png?raw=true)
 
+### 2 Users(John):
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/2Login.png?raw=true)
+
+### 3 Users(Community):
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/3Login.png?raw=true)
+
+### Direct messaging between 2 users:
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/directMessage.png?raw=true)
+
+### 4th User(gabe) connects and messages community:
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/groupMessage.png?raw=true)
+
+### Gabe disconnects:
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/UserDisconnects.png?raw=true)
+
+### File sharing:
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/sendFiles.png?raw=true)
+
+### Direct messaging between 2 users:
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/directMessage.png?raw=true)
+
+### John disconnects:
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/userDisconnects2.png?raw=true)
+
+### Message Persists after logging back in:
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/messagePersists.png?raw=true)
+
+### All Users disconnect:
+
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/allUsersDisconnect.png?raw=true)
 
 To try it out for yourself, here is a link to the applications:
 
-//link to both jar files
+![Client code](https://github.com/Abdulzy/DistributedChatApp/tree/main/Code/Client?raw=true)
+
+![Server code](https://github.com/Abdulzy/DistributedChatApp/tree/main/Code/Server?raw=true)
 
 ## Limitations
-"community' has to be manually logged into
+"community" has to be manually logged into
+no log out button(wasn't required) but could easily be implemented
 
 # Conclusions / Lessons Learned
 
