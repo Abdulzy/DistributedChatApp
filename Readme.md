@@ -136,9 +136,9 @@ This app allows seamless chatting and file-sharing facilities while the end-to-e
 
 To try it out for yourself, here is a link to the applications:
 
-![Client code](https://github.com/Abdulzy/DistributedChatApp/tree/main/Code/Client?raw=true)
+[Client code](https://github.com/Abdulzy/DistributedChatApp/tree/main/Code/Client)
 
-![Server code](https://github.com/Abdulzy/DistributedChatApp/tree/main/Code/Server?raw=true)
+[Server code](https://github.com/Abdulzy/DistributedChatApp/tree/main/Code/Server)
 
 ## Limitations
 "community" has to be manually logged into
