@@ -25,7 +25,7 @@ All sharing resources should be protected by Mutual Exclusion to prevent race co
 
 As one of the required algorithms for this project, replicated data management is implemented using SQLite database’s group replication. Three replicated SQLite servers are set using the single master-multiple slave replication model. This means that one of the servers is the master server and others are slave servers. The slave servers replicate or copy data from the master server simultaneously.
 
-//insert image client
+![alt text](https://github.com/Abdulzy/DistributedChatApp/blob/main/images/clientRead.png?raw=true)
 
 The implementation behind the replication of data from master to slave uses a binary log. The source server keeps track of all the changes to its databases (updates, deletes, and so on) in its binary log. The slave servers connect to the master server and get a copy of the binary log. Then, they execute the events recorded in the log so that the replicas can synchronize their data with the master/source server. The SELECT statements are not saved in the log because they do not modify the data. 
 
